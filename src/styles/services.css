@@ -1,0 +1,135 @@
+.services-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.34fr) 1fr;
+  gap: 28px;
+}
+
+.service-tabs {
+  position: sticky;
+  top: 122px;
+  display: grid;
+  gap: 10px;
+  align-self: start;
+}
+
+.service-tabs button {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+  min-height: 84px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--muted);
+  text-align: left;
+  background: rgba(255, 255, 255, 0.025);
+  cursor: pointer;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.service-tabs button:hover,
+.service-tabs button:focus-visible,
+.service-tabs button.is-active {
+  border-color: rgba(101, 184, 46, 0.68);
+  color: var(--text);
+  background: rgba(101, 184, 46, 0.08);
+  outline: 0;
+  transform: translateX(3px);
+}
+
+.service-tabs strong {
+  color: var(--green-bright);
+  font-size: 15px;
+}
+
+.service-detail {
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(31, 32, 40, 0.96);
+}
+
+.service-detail__top {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.service-detail__top h3 {
+  font-size: clamp(28px, 3vw, 42px);
+}
+
+.service-detail__top p:last-child,
+.service-description {
+  max-width: 850px;
+  margin-top: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.service-detail__top strong {
+  flex: 0 0 auto;
+  color: var(--green-bright);
+  font-size: 30px;
+}
+
+.service-columns {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 34px;
+  margin-top: 26px;
+}
+
+.service-columns h4 {
+  margin-top: 26px;
+  color: var(--green);
+  font-size: 18px;
+}
+
+.service-columns h4:first-child {
+  margin-top: 0;
+}
+
+.service-detail ul,
+.service-detail ol {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+  padding-left: 22px;
+}
+
+.service-detail li {
+  color: var(--text);
+  line-height: 1.58;
+}
+
+@media (max-width: 1080px) {
+  .services-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .service-tabs {
+    position: static;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .service-tabs,
+  .service-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .service-detail {
+    padding: 20px;
+  }
+
+  .service-detail__top {
+    display: grid;
+  }
+}

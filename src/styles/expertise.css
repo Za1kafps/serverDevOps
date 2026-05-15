@@ -1,0 +1,122 @@
+.expertise-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.expertise-tabs button {
+  display: grid;
+  gap: 8px;
+  min-height: 118px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--muted);
+  text-align: left;
+  background: rgba(255, 255, 255, 0.025);
+  cursor: pointer;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.expertise-tabs button:hover,
+.expertise-tabs button:focus-visible,
+.expertise-tabs button.is-active {
+  border-color: rgba(101, 184, 46, 0.68);
+  color: var(--text);
+  background: rgba(101, 184, 46, 0.075);
+  outline: 0;
+  transform: translateY(-2px);
+}
+
+.expertise-tabs__title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.expertise-tabs small {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.expertise-tabs__tools {
+  align-self: end;
+  color: var(--green-bright);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.45;
+  opacity: 0.84;
+}
+
+.expertise-panel {
+  display: grid;
+  grid-template-columns: minmax(360px, 0.48fr) 1fr;
+  gap: 34px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(31, 32, 40, 0.95);
+}
+
+.expertise-panel__summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  align-content: start;
+  min-width: 0;
+}
+
+.expertise-panel__summary h3 {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  font-size: clamp(26px, 2.45vw, 34px);
+  line-height: 1.14;
+}
+
+.expertise-panel__summary p:last-child {
+  margin-top: 14px;
+  color: var(--muted);
+  line-height: 1.62;
+  overflow-wrap: anywhere;
+}
+
+.expertise-panel__body ul {
+  display: grid;
+  gap: 15px;
+  padding-left: 22px;
+}
+
+.expertise-panel__body li {
+  color: var(--text);
+  line-height: 1.58;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1180px) {
+  .expertise-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .expertise-panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .expertise-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .expertise-panel {
+    padding: 20px;
+  }
+
+  .expertise-panel__summary {
+    grid-template-columns: 1fr;
+  }
+}

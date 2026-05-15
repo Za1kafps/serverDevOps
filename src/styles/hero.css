@@ -1,0 +1,171 @@
+.hero-section {
+  scroll-margin-top: 120px;
+}
+
+.hero-panel {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.82fr) 1fr;
+  gap: 64px;
+  align-items: center;
+  min-height: 430px;
+  padding: 34px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(35, 36, 45, 0.92);
+}
+
+.hero-media,
+.hero-copy {
+  min-width: 0;
+}
+
+.hero-copy h1 {
+  margin-top: 18px;
+  font-size: clamp(40px, 5.1vw, 66px);
+  line-height: 1.07;
+}
+
+.hero-copy h1 span {
+  color: var(--green);
+}
+
+.hero-lead {
+  max-width: 720px;
+  margin-top: 22px;
+  color: var(--text);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.hero-stat {
+  display: grid;
+  gap: 5px;
+  min-height: 76px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.hero-stat strong {
+  color: var(--green-bright);
+  font-family: var(--font-mono);
+  font-size: 15px;
+}
+
+.hero-stat span {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.hero-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  margin-top: 34px;
+}
+
+.tool-tile {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 50px;
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.tool-more {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.tool-marquee {
+  overflow: hidden;
+  margin-top: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(31, 32, 40, 0.72);
+}
+
+.tool-marquee__track {
+  display: flex;
+  width: max-content;
+  gap: 10px;
+  padding: 12px 0;
+  animation: marquee-tools 42s linear infinite;
+}
+
+.tool-marquee:hover .tool-marquee__track {
+  animation-play-state: paused;
+}
+
+.tool-marquee__track span {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  border: 1px solid rgba(101, 184, 46, 0.24);
+  border-radius: 999px;
+  padding: 0 16px;
+  color: var(--muted);
+  background: rgba(101, 184, 46, 0.045);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  transition:
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.tool-marquee__track span:hover {
+  border-color: var(--green);
+  color: var(--green-bright);
+  transform: translateY(-2px);
+}
+
+@keyframes marquee-tools {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 1080px) {
+  .hero-panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-panel {
+    gap: 28px;
+    padding: 16px;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-tools {
+    gap: 9px;
+  }
+
+  .tool-tile {
+    min-height: 44px;
+    padding: 6px 9px;
+  }
+}

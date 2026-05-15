@@ -1,0 +1,109 @@
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 860ms ease,
+    transform 860ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tool-tile,
+.expertise-tabs button,
+.expertise-panel,
+.pricing-card,
+.security-tools article,
+.tool-badge,
+.contact-links a {
+  will-change: transform;
+}
+
+.tool-tile:hover,
+.expertise-panel:hover,
+.pricing-card:hover,
+.security-tools article:hover,
+.tool-badge:hover {
+  transform: translateY(-3px);
+}
+
+.tool-tile,
+.expertise-tabs button,
+.expertise-panel,
+.pricing-card,
+.security-tools article,
+.tool-badge {
+  transition:
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease,
+    background 180ms ease;
+}
+
+.tool-tile:hover,
+.expertise-panel:hover,
+.pricing-card:hover,
+.security-tools article:hover,
+.tool-badge:hover {
+  border-color: rgba(101, 184, 46, 0.5);
+  background: rgba(101, 184, 46, 0.055);
+}
+
+.tool-badge:hover {
+  color: var(--green-bright);
+}
+
+.process-steps article:nth-child(2) {
+  transition-delay: 90ms;
+}
+
+.process-steps article:nth-child(3) {
+  transition-delay: 180ms;
+}
+
+.process-steps article:nth-child(4) {
+  transition-delay: 270ms;
+}
+
+.pricing-card:nth-child(2) {
+  transition-delay: 110ms;
+}
+
+.pricing-card:nth-child(3) {
+  transition-delay: 220ms;
+}
+
+.tab-panel-enter-active,
+.tab-panel-leave-active {
+  transition:
+    opacity 260ms ease,
+    transform 260ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 260ms ease;
+}
+
+.tab-panel-enter-from,
+.tab-panel-leave-to {
+  opacity: 0;
+  filter: blur(6px);
+  transform: translateY(10px);
+}
+
+.tab-panel-enter-to,
+.tab-panel-leave-from {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after,
+  [data-reveal] {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,13 @@
+@import '/src/styles/base.css';
+@import '/src/styles/welcome.css';
+@import '/src/styles/layout.css';
+@import '/src/styles/ui.css';
+@import '/src/styles/hero.css';
+@import '/src/styles/expertise.css';
+@import '/src/styles/services.css';
+@import '/src/styles/process.css';
+@import '/src/styles/security.css';
+@import '/src/styles/pricing.css';
+@import '/src/styles/payment.css';
+@import '/src/styles/contacts.css';
+@import '/src/styles/animations.css';
