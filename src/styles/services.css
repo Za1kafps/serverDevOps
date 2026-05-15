@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: minmax(260px, 0.34fr) 1fr;
   gap: 28px;
+  min-width: 0;
 }
 
 .service-tabs {
@@ -14,6 +15,7 @@
 
 .service-tabs button {
   display: grid;
+  min-width: 0;
   gap: 8px;
   width: 100%;
   min-height: 84px;
@@ -29,6 +31,11 @@
     background 180ms ease,
     color 180ms ease,
     transform 180ms ease;
+}
+
+.service-tabs button span {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .service-tabs button:hover,
@@ -47,6 +54,7 @@
 }
 
 .service-detail {
+  min-width: 0;
   padding: 30px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -55,12 +63,18 @@
 
 .service-detail__top {
   display: flex;
+  min-width: 0;
   gap: 22px;
   align-items: flex-start;
   justify-content: space-between;
 }
 
+.service-detail__top > div {
+  min-width: 0;
+}
+
 .service-detail__top h3 {
+  overflow-wrap: anywhere;
   font-size: clamp(28px, 3vw, 42px);
 }
 
@@ -74,15 +88,22 @@
 
 .service-detail__top strong {
   flex: 0 0 auto;
+  max-width: 100%;
+  overflow-wrap: anywhere;
   color: var(--green-bright);
   font-size: 30px;
 }
 
 .service-columns {
   display: grid;
+  min-width: 0;
   grid-template-columns: 1.08fr 0.92fr;
   gap: 34px;
   margin-top: 26px;
+}
+
+.service-columns > div {
+  min-width: 0;
 }
 
 .service-columns h4 {
@@ -106,6 +127,7 @@
 .service-detail li {
   color: var(--text);
   line-height: 1.58;
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: 1080px) {
@@ -131,5 +153,25 @@
 
   .service-detail__top {
     display: grid;
+  }
+}
+
+@media (max-width: 420px) {
+  .service-tabs button {
+    min-height: auto;
+    padding: 14px;
+  }
+
+  .service-detail {
+    padding: 16px;
+  }
+
+  .service-detail__top h3 {
+    font-size: 26px;
+    line-height: 1.16;
+  }
+
+  .service-detail__top strong {
+    font-size: 24px;
   }
 }

@@ -7,6 +7,7 @@
 
 .expertise-tabs button {
   display: grid;
+  min-width: 0;
   gap: 8px;
   min-height: 118px;
   padding: 16px;
@@ -34,17 +35,20 @@
 }
 
 .expertise-tabs__title {
+  overflow-wrap: anywhere;
   font-size: 18px;
   font-weight: 700;
 }
 
 .expertise-tabs small {
+  overflow-wrap: anywhere;
   color: var(--muted);
   font-size: 13px;
   line-height: 1.35;
 }
 
 .expertise-tabs__tools {
+  overflow-wrap: anywhere;
   align-self: end;
   color: var(--green-bright);
   font-family: var(--font-mono);
@@ -55,12 +59,17 @@
 
 .expertise-panel {
   display: grid;
+  min-width: 0;
   grid-template-columns: minmax(360px, 0.48fr) 1fr;
   gap: 34px;
   padding: 28px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: rgba(31, 32, 40, 0.95);
+}
+
+.expertise-panel__body {
+  min-width: 0;
 }
 
 .expertise-panel__summary {
@@ -118,5 +127,20 @@
 
   .expertise-panel__summary {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .expertise-tabs button {
+    min-height: auto;
+    padding: 14px;
+  }
+
+  .expertise-tabs__title {
+    font-size: 16px;
+  }
+
+  .expertise-panel {
+    padding: 16px;
   }
 }

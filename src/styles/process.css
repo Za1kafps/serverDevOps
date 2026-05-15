@@ -3,12 +3,14 @@
   grid-template-columns: minmax(270px, 0.38fr) 1fr;
   gap: 42px;
   min-height: 850px;
+  min-width: 0;
 }
 
 .pinned-process__sticky {
   position: sticky;
   top: 128px;
   align-self: start;
+  min-width: 0;
   padding: 28px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -16,6 +18,7 @@
 }
 
 .pinned-process__sticky h3 {
+  overflow-wrap: anywhere;
   margin-top: 18px;
   font-size: 34px;
   line-height: 1.12;
@@ -31,9 +34,11 @@
   display: grid;
   gap: 24px;
   padding-top: 40px;
+  min-width: 0;
 }
 
 .process-steps article {
+  min-width: 0;
   min-height: 190px;
   padding: 26px;
   border: 1px solid var(--line);
@@ -48,6 +53,7 @@
 }
 
 .process-steps h4 {
+  overflow-wrap: anywhere;
   margin-top: 16px;
   font-size: 25px;
 }
@@ -56,6 +62,7 @@
   margin-top: 12px;
   color: var(--muted);
   line-height: 1.58;
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: 1080px) {
@@ -72,5 +79,34 @@
   .pinned-process__sticky,
   .process-steps article {
     padding: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .pinned-process {
+    min-height: 0;
+    gap: 20px;
+  }
+
+  .pinned-process__sticky,
+  .process-steps article {
+    padding: 16px;
+  }
+
+  .pinned-process__sticky h3 {
+    font-size: 27px;
+  }
+
+  .process-steps {
+    gap: 16px;
+    padding-top: 10px;
+  }
+
+  .process-steps article {
+    min-height: auto;
+  }
+
+  .process-steps h4 {
+    font-size: 21px;
   }
 }

@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr minmax(280px, 0.42fr);
   gap: 28px;
+  min-width: 0;
   padding: 34px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -9,6 +10,7 @@
 }
 
 .contacts-panel h3 {
+  overflow-wrap: anywhere;
   font-size: 42px;
 }
 
@@ -22,10 +24,12 @@
 .contact-links {
   display: grid;
   gap: 12px;
+  min-width: 0;
 }
 
 .contact-links a {
   display: grid;
+  min-width: 0;
   gap: 4px;
   padding: 16px;
   border: 1px solid var(--line);
@@ -61,5 +65,15 @@
 @media (max-width: 760px) {
   .contacts-panel {
     padding: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .contacts-panel {
+    padding: 16px;
+  }
+
+  .contacts-panel h3 {
+    font-size: 32px;
   }
 }

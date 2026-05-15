@@ -30,6 +30,7 @@
   grid-template-columns: auto 1fr auto;
   align-items: center;
   width: min(calc(100% - 32px), var(--container));
+  max-width: var(--container);
   min-height: 72px;
   margin: 0;
   border: 1px solid var(--line);
@@ -37,6 +38,7 @@
   background: rgba(35, 36, 45, 0.88);
   box-shadow: var(--shadow);
   backdrop-filter: blur(18px);
+  touch-action: pan-y;
   transform: translate3d(-50%, 0, 0);
   transition:
     min-height 220ms ease,
@@ -58,6 +60,7 @@
 
 .brand {
   display: inline-flex;
+  min-width: 0;
   align-items: center;
   gap: 12px;
   min-height: 70px;
@@ -82,20 +85,27 @@
 }
 
 .brand__text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 21px;
   font-weight: 700;
 }
 
 .site-nav {
   display: flex;
+  min-width: 0;
+  max-width: 100%;
   align-items: center;
   justify-content: center;
   gap: 4px;
   padding: 0 18px;
+  touch-action: pan-y;
 }
 
 .site-nav a {
   display: inline-flex;
+  flex: 0 0 auto;
   align-items: center;
   min-height: 38px;
   padding: 0 13px;
@@ -115,6 +125,7 @@
 
 .header-cta {
   display: inline-flex;
+  max-width: calc(100vw - 190px);
   min-height: 38px;
   align-items: center;
   justify-content: center;
@@ -125,6 +136,7 @@
   color: var(--muted);
   font-size: 14px;
   font-weight: 700;
+  white-space: nowrap;
   transition:
     border-color 180ms ease,
     color 180ms ease,
@@ -143,10 +155,12 @@
 
 main {
   width: min(calc(100% - 32px), var(--container));
+  max-width: var(--container);
   margin: 114px auto 80px;
 }
 
 .section-shell {
+  min-width: 0;
   scroll-margin-top: 120px;
   margin-top: 52px;
   padding: 70px 64px;
@@ -166,6 +180,7 @@ main {
 }
 
 .section-heading h2 {
+  overflow-wrap: anywhere;
   font-size: clamp(32px, 4vw, 48px);
   line-height: 1.12;
 }
@@ -185,13 +200,14 @@ main {
 
   .site-nav {
     grid-column: 1 / -1;
-    justify-content: flex-start;
-    overflow-x: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-x: clip;
     padding: 0 16px 14px;
   }
 
   main {
-    margin-top: 132px;
+    margin-top: 196px;
   }
 
   .section-shell,
@@ -220,18 +236,23 @@ main {
   }
 
   .header-cta {
-    margin-right: 12px;
+    grid-column: 1 / -1;
+    justify-self: stretch;
+    max-width: none;
+    margin: 0 16px 14px;
     padding: 0 12px;
+    font-size: 13px;
   }
 
   .site-nav a {
+    justify-content: center;
     min-height: 34px;
     padding: 0 10px;
     font-size: 13px;
   }
 
   main {
-    margin-top: 126px;
+    margin-top: 228px;
   }
 
   .section-shell,
@@ -242,5 +263,60 @@ main {
 
   .section-heading {
     margin-bottom: 26px;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-header,
+  main {
+    width: min(calc(100% - 12px), var(--container));
+  }
+
+  .brand {
+    gap: 8px;
+    padding: 0 10px;
+  }
+
+  .brand__mark {
+    width: 34px;
+    height: 34px;
+    font-size: 19px;
+  }
+
+  .brand__text {
+    font-size: 16px;
+  }
+
+  .header-cta {
+    min-height: 32px;
+    margin: 0 10px 10px;
+    padding: 0 8px;
+    font-size: 12px;
+  }
+
+  .site-nav {
+    gap: 4px 5px;
+    padding: 0 10px 10px;
+  }
+
+  .site-nav a {
+    min-height: 32px;
+    padding: 0 8px;
+    font-size: 12px;
+  }
+
+  main {
+    margin-top: 224px;
+    margin-bottom: 52px;
+  }
+
+  .section-shell,
+  .section-shell--wide {
+    padding: 24px 12px;
+  }
+
+  .section-heading h2 {
+    font-size: 28px;
+    line-height: 1.16;
   }
 }

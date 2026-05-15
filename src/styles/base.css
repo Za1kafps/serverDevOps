@@ -37,12 +37,14 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
   background: var(--bg-deep);
 }
 
 body {
   min-width: 320px;
   margin: 0;
+  overflow-x: clip;
   color: var(--text);
   background: var(--bg);
 }
@@ -92,6 +94,12 @@ ol {
 
 li {
   color: var(--text);
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
 }
 
 #app {

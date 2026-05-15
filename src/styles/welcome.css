@@ -22,6 +22,7 @@
   position: relative;
   display: grid;
   justify-items: center;
+  min-width: 0;
   width: min(calc(100% - 32px), 720px);
   text-align: center;
 }
@@ -79,6 +80,7 @@
 }
 
 .welcome-overlay h2 {
+  overflow-wrap: anywhere;
   margin-top: 16px;
   color: var(--text);
   font-size: 54px;
@@ -92,6 +94,8 @@
 }
 
 .welcome-overlay__link {
+  max-width: 100%;
+  overflow-wrap: anywhere;
   margin-top: 26px;
   color: rgba(248, 250, 252, 0.58);
   font-family: var(--font-mono);
@@ -128,6 +132,22 @@
 @media (max-width: 640px) {
   .welcome-overlay h2 {
     font-size: 38px;
+  }
+}
+
+@media (max-width: 420px) {
+  .welcome-overlay__icons {
+    gap: 10px;
+  }
+
+  .welcome-overlay__icons span {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .welcome-overlay h2 {
+    font-size: 31px;
   }
 }
 

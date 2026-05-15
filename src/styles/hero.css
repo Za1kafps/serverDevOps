@@ -20,6 +20,7 @@
 }
 
 .hero-copy h1 {
+  overflow-wrap: anywhere;
   margin-top: 18px;
   font-size: clamp(40px, 5.1vw, 66px);
   line-height: 1.07;
@@ -32,6 +33,7 @@
 .hero-lead {
   max-width: 720px;
   margin-top: 22px;
+  overflow-wrap: anywhere;
   color: var(--text);
   font-size: 17px;
   line-height: 1.65;
@@ -46,6 +48,7 @@
 
 .hero-stat {
   display: grid;
+  min-width: 0;
   gap: 5px;
   min-height: 76px;
   padding: 14px;
@@ -76,6 +79,7 @@
 
 .tool-tile {
   display: inline-flex;
+  min-width: 0;
   align-items: center;
   gap: 9px;
   min-height: 50px;
@@ -84,6 +88,11 @@
   border-radius: 6px;
   color: var(--muted);
   background: rgba(255, 255, 255, 0.025);
+}
+
+.tool-tile span {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .tool-more {
@@ -156,6 +165,16 @@
     padding: 16px;
   }
 
+  .hero-copy h1 {
+    font-size: 34px;
+    line-height: 1.12;
+  }
+
+  .hero-lead {
+    font-size: 15px;
+    line-height: 1.58;
+  }
+
   .hero-stats {
     grid-template-columns: 1fr;
   }
@@ -167,5 +186,24 @@
   .tool-tile {
     min-height: 44px;
     padding: 6px 9px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-panel {
+    padding: 12px;
+  }
+
+  .hero-copy h1 {
+    font-size: 30px;
+  }
+
+  .hero-tools {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .tool-tile {
+    width: 100%;
   }
 }
