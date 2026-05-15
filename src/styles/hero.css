@@ -22,7 +22,7 @@
 .hero-copy h1 {
   overflow-wrap: anywhere;
   margin-top: 18px;
-  font-size: clamp(40px, 5.1vw, 66px);
+  font-size: clamp(39px, 5vw, 65px);
   line-height: 1.07;
 }
 
@@ -166,7 +166,7 @@
   }
 
   .hero-copy h1 {
-    font-size: 34px;
+    font-size: 33px;
     line-height: 1.12;
   }
 
@@ -195,7 +195,7 @@
   }
 
   .hero-copy h1 {
-    font-size: 30px;
+    font-size: 29px;
   }
 
   .hero-tools {
